@@ -1,0 +1,475 @@
+/* General Styles */
+body {
+  margin: 0px;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Header Section */
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 10px 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+header.hidden {
+  transform: translateY(-120%);
+}
+
+header.scrolling {
+  position: fixed;
+  top: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.scrolled {
+  position: sticky;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #0076ff;
+}
+
+.navbar img {
+  width: auto;
+  height: 30px;
+}
+
+.navbar span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.2s ease-in-out, transform 0.3s ease-in-out;
+}
+
+header nav a:hover {
+  color: #0076ff;
+}
+
+/* Carousel Section */
+.carousel-item img {
+  animation: zoomEffect 7s ease-in-out infinite;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+.carousel-caption h5 {
+  font-size: xxx-large;
+  line-height: 1.5;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+  opacity: 0;
+}
+
+/* Saat slide aktif, animasi pop-up dan fade-in */
+.carousel-item.active .carousel-caption h5,
+.carousel-item.active .carousel-caption p {
+  animation: popUpFadeIn 0.4s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Animasi pada caption yang keluar */
+.carousel-item:not(.active) .carousel-caption h5,
+.carousel-item:not(.active) .carousel-caption p {
+  animation: popDownFadeOut 0.4s ease-in forwards;
+}
+
+/* Vision Section */
+.vision {
+  text-align: center;
+  padding-top: 0px;
+}
+
+.vision h3 {
+  color: #0076ff;
+}
+
+.vision-image {
+  display: flex;
+  max-width: fit-content;
+  height: 700px;
+  margin: 0px auto;
+  padding-top: 60px;
+  padding-bottom: 90px;
+  object-fit: cover;
+}
+
+.vision-image img {
+  display: flex;
+  width: 100%;
+}
+
+.isi {
+  margin: 80px;
+}
+
+/* Dasar Timeline */
+.timeline {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 80%;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #0076ff;
+  transform: translateX(-50%);
+}
+
+/* Entry Timeline */
+
+.journey-text {
+  position: relative;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  z-index: 10;
+}
+.timeline-entry {
+  position: relative;
+  width: 50%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.timeline-entry.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-entry.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: #0076ff;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  z-index: 1;
+}
+
+.timeline-entry.left .timeline-dot {
+  right: -10px;
+}
+
+.timeline-entry.right .timeline-dot {
+  left: -10px;
+}
+
+/* Konten Timeline */
+
+.timeline-content {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-entry.left .timeline-content {
+  margin-right: auto;
+}
+
+.timeline-entry.right .timeline-content {
+  margin-left: auto;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .timeline {
+    width: 100%;
+  }
+
+  .timeline-entry {
+    width: 100%;
+    left: 0;
+    text-align: center;
+  }
+
+  .timeline-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-content {
+    margin: 0 auto;
+    text-align: left;
+  }
+}
+
+/* Timeline Image Section */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 125px;
+  margin: 20px 0;
+}
+
+.timeline-entry {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.timeline-date {
+  flex: 1;
+  font-weight: bold;
+}
+
+.timeline-content {
+  flex: 3;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Parallax Section */
+.parallax img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+/* Misi Section */
+.misi {
+  background-color: #0076ff;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  padding: 20px 0px 20px 50px;
+}
+
+.header-text {
+  text-align: left;
+  padding: 0px 0px 50px 0px;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #0076ff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-section h4 {
+  text-align: left;
+  font-size: larger !important;
+}
+
+.contact-section-2,
+.contact-section-3 {
+  flex: 1;
+  padding: 15px;
+  min-width: 250px;
+  border: 1px solid #f8f8f8;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+}
+
+.contact-section-2,
+.contact-section-3 {
+  transition: border 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.contact-section-2:hover {
+  transform: scale(1.05);
+  border: 3px solid #f8f8f8;
+  box-shadow: 0 8px 12 px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section-3:hover {
+  transform: scale(1.05);
+  border: 3px solid #f8f8f8;
+  box-shadow: 0 8px 12 px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0076ff;
+  color: white;
+  border: 1px solid #f8f8f8;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+  background-color: #fff;
+  color: #0076ff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content {
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-weight: bold;
+}
+
+.contact-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact-section-2 h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact-section-3 h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Footer Section */
+
+.footer-bottom {
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  padding-top: 10px;
+  margin-bottom: 150px;
+}
+
+.bottom-header {
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+  margin-left: 80px;
+}
+
+.footer-bottom .table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.table {
+  margin-right: 200px;
+  font-size: large;
+}
+
+.table td,
+table th {
+  border: none;
+}
+/* Per Keyframes an */
+
+/* Keyframes for the zoom effect */
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Zoom in */
+  }
+  100% {
+    transform: scale(1); /* Zoom out */
+  }
+}
+
+/* Animasi Fade-In dengan Pop-Up */
+@keyframes popUpFadeIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animasi Fade-Out dengan Pengecilan */
+@keyframes popDownFadeOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Animasi Tarik ke Dalam dengan Fade-Out */
+@keyframes pullInFadeOut {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(50px) scale(0.8);
+    opacity: 0;
+  }
+}
