@@ -1,0 +1,77 @@
+/* Body */
+body {
+    background-color: #111;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    text-align: center;
+    border-radius: 0px ;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FCF3A2;
+}
+
+header nav a {
+    color: #5AB1E3;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #E2508A; 
+}
+
+/* Content */
+.introduction {
+    color: #ee84f2;
+    font-size: 1.5em;
+    background-color: #333;
+    text-align: center;
+}
+
+button {
+    color: #5AB1E3;
+    background-color: #E2508A;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #5AB1E3;
+    color: #191E3D;
+}
+
+
+/*about */
+.about {
+    padding: 20px;
+    background-color: #444;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* portfolio */
+.portofolio {
+    background-color: #555;
+    text-align: center;
+
+    
+}

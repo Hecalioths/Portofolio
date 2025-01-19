@@ -1,0 +1,49 @@
+body {
+    background-color: #333;
+    margin: 0;
+}
+
+/* Navbar Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #191E3D;
+    position: relative;
+    animation: glowAnimation 1.5s ease-in-out infinite;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FCF3A2;
+}
+
+header nav a {
+    color: #5AB1E3;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 300;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header nav a:hover {
+    color: #E2508A; /* Warna Hover */
+}
+
+.bio-container {
+    background-color: aqua;
+}
+
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 5px #FCF3A2, 0 0 10px #FCF3A2, 0 0 15px #FCF3A2;
+    }
+    50% {
+        box-shadow: 0 0 20px #FCF3A2, 0 0 30px #FCF3A2, 0 0 40px #FCF3A2;
+    }
+    100% {
+        box-shadow: 0 0 5px #FCF3A2, 0 0 10px #FCF3A2, 0 0 15px #FCF3A2;
+    }
+}

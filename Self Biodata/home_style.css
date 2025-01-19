@@ -1,0 +1,261 @@
+/* Import Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg,#CB96DC,#2C416A,#AC79E0);
+    color: #FCF3A2; /* Teks utama (Ibarat Default) */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Navbar Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #191E3D;
+    position: relative;
+    animation: glowAnimation 1.5s ease-in-out infinite;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FCF3A2;
+}
+
+header nav a {
+    color: #5AB1E3;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 300;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header nav a:hover {
+    color: #E2508A; /* Warna Hover */
+}
+
+/* Introduction Section */
+.introduction {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(60deg,#CB96DC,#2C416A,#AC79E0,#2C416A,#CB96DC,#2C416A,#AC79E0,#2C416A);
+    background-size: 400% 400%;
+    animation: nebulaMovement 3s infinite ease-in-out;
+    color: #FCF3A2;
+}
+
+.introduction h1 {
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #E2508A;
+}
+
+.introduction p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    color: #FCF3A2;
+}
+
+.aurora {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(0,255,255,0) 70%);
+    filter: blur(20px);
+    animation: auroraMove 5s infinite alternate ease-in-out;
+}
+
+
+.meteor {
+    position: absolute;
+    top: -50px;
+    width: 5px;
+    height: 80px;
+    background: linear-gradient(to bottom, #FCF3A2, transparent);
+    animation: meteorShower 2s infinite linear;
+    opacity: 0.8;
+}
+
+
+
+/* About Section */
+.about {
+    padding: 80px 20px;
+    text-align: center;
+    margin: auto;
+    background: linear-gradient(120deg,#CB96DC,#2C416A,#AC79E0,#2C416A,#CB96DC,#2C416A,#AC79E0,#2C416A);
+    background-size: 400% 400%;
+    animation: gradientAnimationAbout 4.5s ease infinite;
+}
+
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #CB96DC;
+}
+
+.about button {
+    background-color: #E2508A;
+    color: #191E3D;
+    padding: 15px 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.about button:hover {
+    transform: scale(1.05);
+    background-color: #5AB1E3;
+    color: #191E3D;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(120deg, #191E3D, #2C416A);
+}
+
+.portfolio h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #5AB1E3;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.portfolio-item {
+    background-color: #524F89;
+    color: #FCF3A2;
+    padding: 40px;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    background-color: #AC79E0;
+    color: #191E3D;
+}
+
+/*Per Keyframe an*/
+
+/* Keyframes Gradient Animation Intro */
+@keyframes gradientAnimationIntro {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Keyframes Gradient Animation About */
+@keyframes gradientAnimationAbout {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glowAnimation {
+    0% {
+        box-shadow: 0 0 5px #FCF3A2, 0 0 10px #FCF3A2, 0 0 15px #FCF3A2;
+    }
+    50% {
+        box-shadow: 0 0 20px #FCF3A2, 0 0 30px #FCF3A2, 0 0 40px #FCF3A2;
+    }
+    100% {
+        box-shadow: 0 0 5px #FCF3A2, 0 0 10px #FCF3A2, 0 0 15px #FCF3A2;
+    }
+}
+
+@keyframes sparkleEffect {
+    0%, 100% {
+        box-shadow: 0 0 5px #E2508A, 0 0 10px #E2508A;
+        opacity: 0.8;
+    }
+    50% {
+        box-shadow: 0 0 15px #FCF3A2, 0 0 25px #E2508A;
+        opacity: 1;
+    }
+}
+
+@keyframes glowEffect {
+    0%, 100% {
+        opacity: 0.5; /* Redup */
+    }
+    50% {
+        opacity: 1; /* Menyala penuh */
+    }
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animasi Nebula */
+@keyframes nebulaMovement {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Animasi Meteor */
+@keyframes meteorShower {
+    0% {
+        transform: translate(-50px, -50px) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(800px, 600px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Animasi Aurora */
+@keyframes auroraMove {
+    0% {
+        transform: translate(-50%, 0) scaleX(1.5);
+    }
+    100% {
+        transform: translate(0, 0) scaleX(1.2);
+    }
+}
+
+/* Animasi Pulsar */
+@keyframes pulsarEffect {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #E2508A, 0 0 40px #E2508A;
+    }
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 40px #FCF3A2, 0 0 80px #E2508A;
+    }
+}
